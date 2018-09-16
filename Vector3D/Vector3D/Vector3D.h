@@ -8,13 +8,8 @@ class Vec3D
 
 public:
 
-	Vec3D<T>()//constructor que inicializa a 0
-	{
-		x = 0;
-		y = 0; 
-		z = 0;
-	};
-
+	
+	
 	Vec3D<T>(T X, T Y, T Z)// constructor normal 
 	{
 		x = X;
@@ -29,7 +24,8 @@ public:
 		z = vec.z;
 	}
 
-
+	//Vec3D<T> operator+(Vec3D<T> vec);//returns sum result
+	Vec3D<T> operator+(Vec3D<T> vector) const;
 
 
 
@@ -38,6 +34,7 @@ public:
 
 public:
 
+	
 	T x;
 	T y;
 	T z;
@@ -46,6 +43,23 @@ public:
 
 };
 
+template<class T>
+
+Vec3D<T> Vec3D<T>::operator+(Vec3D<T> vector) const
+{
+	Vec3D<T> ret(x + vector.x, y + vector.y, z + vector.z);
+	return ret;
+}
+
+
+//template <class T>
+//
+//Vec3D<T> Vec3D<T>::operator+(Vec3D<T> vec)
+//{
+//	Vec3D<T> retVec(x + vec.x, y + vec.y, z + vec.z);
+//
+//	return retVec;
+//}
 
 
 
