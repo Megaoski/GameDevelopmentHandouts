@@ -1,3 +1,7 @@
 ﻿  Main.cpp
-c:\users\usuario\documents\github\gamedevelopmenthandouts\vector3d\vector3d\vector3d.h(61): error C2760: syntax error: unexpected token ',', expected ')'
-c:\users\usuario\documents\github\gamedevelopmenthandouts\vector3d\vector3d\vector3d.h(68): error C2760: syntax error: unexpected token ',', expected ')'
+c:\users\usuario\documents\github\gamedevelopmenthandouts\vector3d\vector3d\main.cpp(23): warning C4305: 'argument': truncation from 'double' to 'const T'
+          with
+          [
+              T=float
+          ]
+  Vector3D.vcxproj -> C:\Users\Usuario\Documents\GitHub\GameDevelopmentHandouts\Vector3D\Debug\Vector3D.exe
