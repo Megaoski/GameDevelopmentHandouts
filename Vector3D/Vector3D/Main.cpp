@@ -19,8 +19,9 @@ int main()
 		cout << " They are the same";
 	}
 	
-
-	/*cout << c.x << "\n";*/
+	/*Vec3D<int> a(0, 0, 0);
+	Vec3D<int> b(1, 2, 3);
+	printf("Distance between vectors 1 and 2 = %i\n", a.distanceToVector(b));*/
 
 	system("pause");
 	return 0;

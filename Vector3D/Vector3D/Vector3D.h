@@ -26,11 +26,11 @@ public:
 
 	//METHODS
 
-	float moduled();
-	void normalize();
+	double moduled();
+	Vec3D<T> normalize();
 	void toZero();
 	bool isZero();
-	float distanceToVector(Vec3D<T> vec);
+	T distanceToVector(const Vec3D<T> &vec);//usamos T ya que no sabemos que nos va a pedir
 
 public:
 
@@ -84,29 +84,24 @@ bool Vec3D<T>::operator==(const Vec3D<T> &vec) const
 
 template<class T>
 
-float Vec3D<T>::moduled()
+double Vec3D<T>::moduled()
 {
 	return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
 };
 
 template<class T>
 
-void Vec3D<T>::normalize()
+Vec3D<T> Vec3D<T>::normalize()
 {
 	Vec3D<T> normalized = this;
-
-	x = x / normalized.moduled();
-	y = y / normalized.moduled();
-	z = z / normalized.moduled();
+	return Vec3D<T>(x / normalized.moduled(), y / normalized.moduled(), z / normalized.moduled());
 };
 
 template<class T>
 
 void Vec3D<T>::toZero()
 {
-	x = 0;
-	y = 0; 
-	z = 0;
+	return Vec3D<T>(x = 0, y = 0, z = 0);
 };
 
 template<class T>
@@ -118,14 +113,14 @@ bool Vec3D<T>::isZero()
 
 template<class T>
 
-float Vec3D<T>::distanceToVector(Vec3D<T> vec)
+T Vec3D<T>::distanceToVector(const Vec3D<T> &vec)
 {
-	Vec3D<T> resultVec;
+	T resultVec;
 	resultVec.x = x - vec.x;
 	resultVec.y = y - vec.y;
 	resultVec.z = z - vec.z;
 
-	return resultVec;
+	return sqrt(pow(resultVec.x, 2) + pow(resultVec.y, 2), pow(resultVec.z, 2));
 };
 
 #endif
