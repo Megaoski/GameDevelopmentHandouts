@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Config file for the game -->
 
 <config>
 
-	<name>My name is Charo and I move my maracas</name>
+	<name>My name is Charo and I shake my maracas</name>
 
   
 

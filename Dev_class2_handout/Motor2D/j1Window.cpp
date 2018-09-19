@@ -37,6 +37,7 @@ bool j1Window::Awake()
 		width = WIDTH;
 		height = HEIGHT;
 		scale = SCALE;
+		
 
 		if(FULLSCREEN)
 		{
@@ -72,7 +73,7 @@ bool j1Window::Awake()
 
 			// TODO 4: Read the title of the app from the XML
 			// and set directly the window title using SetTitle()
-
+			
 		}
 	}
 

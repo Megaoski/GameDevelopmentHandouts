@@ -61,6 +61,18 @@ bool j1App::Awake()
 	// If everything goes well, load the top tag inside the xml_node property
 	// created in the last TODO
 
+	xml_parse_result result = config.load_file("config.xml");
+
+	LOG("Load result:");
+	if (result) 
+	{
+		reader = config.child("config");
+		LOG("YEP");
+	}
+	else 
+		LOG("NOPE");
+	
+
 	bool ret = true;
 
 	p2List_item<j1Module*>* item;

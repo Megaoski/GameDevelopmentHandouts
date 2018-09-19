@@ -5,6 +5,8 @@
 #include "j1Module.h"
 #include "PugiXml\src\pugixml.hpp"
 
+using namespace pugi;
+
 // Modules
 class j1Window;
 class j1Input;
@@ -79,7 +81,10 @@ private:
 	// TODO 2: Create two new variables from pugui namespace:
 	// a xml_document to store the whole config file and
 	// a xml_node to read specific branches of the xml
-	/*pugi::xml_node*/
+
+	xml_document config;
+	xml_node reader;
+
 	int					argc;
 	char**				args;
 };
