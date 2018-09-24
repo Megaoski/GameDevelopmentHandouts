@@ -19,8 +19,8 @@ public:
 
 	Vec3D<T> operator+(const Vec3D<T> &vec) const;
 	Vec3D<T> operator-(const Vec3D<T> &vec) const;
-	/*Vec3D<T> operator+=(const Vec3D<T> &vec);
-	Vec3D<T> operator-=(const Vec3D<T> &vec);*/
+	Vec3D<T> operator+=(const Vec3D<T> &vec);
+	Vec3D<T> operator-=(const Vec3D<T> &vec);
 	Vec3D<T> operator=(const Vec3D<T> &vec);
 	bool operator==(const Vec3D<T> &vec) const;
 
@@ -54,19 +54,31 @@ Vec3D<T> Vec3D<T>::operator-(const Vec3D<T> &vec) const
 	return Vec3D<T>(x - vec.x, y - vec.y, z - vec.z);
 };
 
-//template<class T>
-//
-//Vec3D<T> Vec3D<T>::operator+=(const Vec3D<T> &vec)
-//{
-//	return Vec3D<T>(x += vec.x, y += vec.y, z += vec.z, );
-//};
-//
-//template<class T>
-//
-//Vec3D<T> Vec3D<T>::operator-=(const Vec3D<T> &vec)
-//{
-//	return Vec3D<T>(x -= vec.x, y -= vec.y, z -= vec.z,);
-//};
+template<class T>
+
+Vec3D<T> Vec3D<T>::operator+=(const Vec3D<T> &vec)
+{
+	Vec3D<T> ret;
+
+	ret.x += vec.x;
+	ret.y += vec.y;
+	ret.z += vec.z;
+
+	return ret;
+};
+
+template<class T>
+
+Vec3D<T> Vec3D<T>::operator-=(const Vec3D<T> &vec)
+{
+	Vec3D<T> ret;
+
+	ret.x -= vec.x;
+	ret.y -= vec.y;
+	ret.z -= vec.z;
+
+	return ret;
+};
 
 template<class T>
 
