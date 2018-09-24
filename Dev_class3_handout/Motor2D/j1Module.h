@@ -61,6 +61,15 @@ public:
 
 	// TODO 3: Create new virtual methods to Load and Save
 
+	virtual void Save(pugi::xml_node& node) const
+	{
+	}
+
+	virtual void Load(pugi::xml_node& node)
+	{
+
+	}
+
 public:
 
 	p2SString	name;

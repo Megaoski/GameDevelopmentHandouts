@@ -49,6 +49,9 @@ public:
 	// will one execute by the very end of the frame
 	// Load / Save
 
+	void LoadGame();
+	void SaveGame() const;
+
 private:
 
 	// Load config file
@@ -68,6 +71,9 @@ private:
 
 	// Call modules after each loop iteration
 	bool PostUpdate();
+
+
+	
 
 public:
 
@@ -92,6 +98,9 @@ private:
 
 	p2SString			title;
 	p2SString			organization;
+
+	bool save = false;
+	bool load = false;
 
 };
 

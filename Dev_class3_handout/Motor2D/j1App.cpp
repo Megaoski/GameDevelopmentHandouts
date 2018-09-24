@@ -153,7 +153,17 @@ void j1App::FinishUpdate()
 {
 	// TODO 1: This is a good place to call load / Save functions
 
+	if (save == true) {
+		
+		SaveGame();
+	}
+
+	if (load == true) {
+		
+		LoadGame();
+	}
 }
+
 
 // Call modules before each loop iteration
 bool j1App::PreUpdate()
