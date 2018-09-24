@@ -5,7 +5,7 @@
 #include "j1Module.h"
 #include "PugiXml\src\pugixml.hpp"
 
-using namespace pugi;
+
 
 // Modules
 class j1Window;
@@ -46,6 +46,8 @@ public:
 
 private:
 
+	bool LoadConfig();
+
 	// Call modules before each loop iteration
 	void PrepareUpdate();
 
@@ -82,11 +84,17 @@ private:
 	// a xml_document to store the whole config file and
 	// a xml_node to read specific branches of the xml
 
-	xml_document config;
-	xml_node reader;
+	pugi::xml_document config;
+	pugi::xml_node reader;
+
+	pugi::xml_document	config_file;
+	pugi::xml_node		app_config;
 
 	int					argc;
 	char**				args;
+
+	
+	
 };
 
 extern j1App* App; 

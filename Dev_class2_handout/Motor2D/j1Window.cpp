@@ -19,7 +19,7 @@ j1Window::~j1Window()
 }
 
 // Called before render is available
-bool j1Window::Awake()
+bool j1Window::Awake(pugi::xml_node* config_node)
 {
 	LOG("Init SDL window & surface");
 	bool ret = true;
@@ -37,7 +37,7 @@ bool j1Window::Awake()
 		width = WIDTH;
 		height = HEIGHT;
 		scale = SCALE;
-		
+		title = config_node->child("window").child("title").attribute("text").as_string();
 
 		if(FULLSCREEN)
 		{
@@ -59,7 +59,7 @@ bool j1Window::Awake()
 			flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 		}
 
-		window = SDL_CreateWindow(TITLE, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
+		window = SDL_CreateWindow(title.GetString(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, flags);
 
 		if(window == NULL)
 		{
@@ -74,6 +74,7 @@ bool j1Window::Awake()
 			// TODO 4: Read the title of the app from the XML
 			// and set directly the window title using SetTitle()
 			
+			SetTitle(config_node->child("window").child("title").attribute("text").as_string());
 		}
 	}
 

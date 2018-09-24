@@ -2,6 +2,7 @@
 #define __j1WINDOW_H__
 
 #include "j1Module.h"
+#include "PugiXml\src\pugixml.hpp"
 
 
 
@@ -18,7 +19,7 @@ public:
 	virtual ~j1Window();
 
 	// Called before render is available
-	bool Awake();
+	bool Awake(pugi::xml_node* config_node);
 
 	// Called before quitting
 	bool CleanUp();

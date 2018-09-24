@@ -2,9 +2,14 @@
 <!-- Config file for the game -->
 
 <config>
+	<app>
+		<window>
 
-	<name>My name is Charo and I shake my maracas</name>
+			<title text = "My name is Charo and I shake my maracas"/>
+			<size width = "1024"/>
+			<size height = "768"/>
+			<scale number = "1"/>
 
-  
-
+  		</window>
+	</app>
 </config>
