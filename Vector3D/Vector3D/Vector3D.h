@@ -98,7 +98,7 @@ template<class T>
 
 double Vec3D<T>::moduled()
 {
-	return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
+	return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));//no usar sqrt, al ser funcion el llamarla es ineficiente
 };
 
 template<class T>
@@ -106,7 +106,7 @@ template<class T>
 Vec3D<T> Vec3D<T>::normalize()
 {
 	Vec3D<T> normalized = this;
-	return Vec3D<T>(x / normalized.moduled(), y / normalized.moduled(), z / normalized.moduled());
+	return Vec3D<T>(x / normalized.moduled(), y / normalized.moduled(), z / normalized.moduled());//lo miso que arriba, lo mejor es no llamar funciones
 };
 
 template<class T>
@@ -127,7 +127,7 @@ template<class T>
 
 T Vec3D<T>::distanceToVector(const Vec3D<T> &vec)
 {
-	return(sqrt((vec.x - x) + (vec.y - y) + (vec.z - z)));
+	return(sqrt((vec.x - x) + (vec.y - y) + (vec.z - z)));//same shit
 };
 
 #endif
