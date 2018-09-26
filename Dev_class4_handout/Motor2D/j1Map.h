@@ -9,10 +9,30 @@
 // TODO 2: Create a struct to hold information for a TileSet
 // Ignore Terrain Types and Tile Types for now, but we want the image!
 // ----------------------------------------------------
-
+struct TileSet
+{
+	char* name = "Desert";
+	uint width;
+	uint height;
+	uint spacing;
+	uint margin;
+};
 
 // TODO 1: Create a struct needed to hold the information to Map node
 
+enum orientation {ORTHOGONAL, ISOMETRIC};
+enum renderorder {RIGHTDOWN, RIGHTUP, LEFTDOWN, LEFTUP};
+
+struct MapNode
+{
+	orientation orientationMap = ORTHOGONAL;
+	renderorder renderMap = RIGHTDOWN;
+
+	uint width;
+	uint height;
+	uint tilewidth;
+	uint tileheight;
+};
 
 // ----------------------------------------------------
 class j1Map : public j1Module
@@ -38,10 +58,14 @@ public:
 
 private:
 
+	bool LoadMap();
+	bool LoadTileset();
 
 public:
 
 	// TODO 1: Add your struct for map info as public for now
+
+	MapNode firstMap;
 
 private:
 
