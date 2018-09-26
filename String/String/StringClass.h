@@ -14,7 +14,7 @@ public:
 		strcpy_s(text, characters + 1, word);
 	}
 	
-	/*MyString(const MyString &string) : characters(string.), text(new char[characters + 1])
+	/*MyString(const MyString &string) : characters(string), text(new char[characters + 1])
 	{
 
 	}*/
@@ -25,7 +25,11 @@ public:
 	}
 
 	//metodo para comprar dos triungs y ver si son iguales
-	//metodo para
+	uint stringSize() const//metodo para saber numero de caracteres
+	{
+		return characters;
+	}
+	
 
 private:
 
