@@ -30,6 +30,10 @@ public:
 		return characters;
 	}
 	
+	bool operator==(const MyString &string)
+	{
+		return strcmp(text, string.text) == 0;
+	}
 
 private:
 
