@@ -7,7 +7,7 @@ int main()
 {
 	MyString example("Hello");
 
-	cout << example.text << endl;
+	/*printf("%s\n", example.text);*/
 
 	system("pause");
 	return 0;
