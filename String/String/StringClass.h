@@ -24,7 +24,6 @@ public:
 		delete[] text;
 	}
 
-	//metodo para comprar dos triungs y ver si son iguales
 	uint stringSize() const//metodo para saber numero de caracteres
 	{
 		return characters;
@@ -35,10 +34,13 @@ public:
 		return strcmp(text, string.text) == 0;
 	}
 
+	// do string a("hello"); string b(a); string b("hi);
+
 private:
 
 	uint characters = 0;
 	char* text = nullptr;
+	uint mem_allocated = 0;//memoria que usaremos
 
 };
 
