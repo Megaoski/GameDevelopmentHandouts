@@ -4,7 +4,7 @@
 #include "j1Render.h"
 #include "j1Textures.h"
 #include "j1Map.h"
-#include <math.h>
+//#include <math.h>
 
 j1Map::j1Map() : j1Module(), map_loaded(false)
 {
@@ -77,7 +77,15 @@ bool j1Map::CleanUp()
 
 	// TODO 2: clean up all layer data
 	// Remove all layers
+	p2List_item<MapLayer*>* item2;
+	item2 = data.layers.start;
 
+	while (item2 != NULL)
+	{
+		RELEASE(item2->data);
+		item2 = item2->next;
+	}
+	data.layers.clear();
 
 	// Clean up the pugui tree
 	map_file.reset();
@@ -292,6 +300,12 @@ bool j1Map::LoadTilesetImage(pugi::xml_node& tileset_node, TileSet* set)
 }
 
 // TODO 3: Create the definition for a function that loads a single layer
-//bool j1Map::LoadLayer(pugi::xml_node& node, MapLayer* layer)
-//{
-//}
+bool j1Map::LoadLayer(pugi::xml_node& node, MapLayer* layer)
+{
+	layer->name.create(node.attribute("name").as_string());
+	layer->width = node.attribute("width").as_uint();
+	layer->height = node.attribute("height").as_uint();
+	layer->data = new uint[layer->width * layer->height];
+
+	memset(layer->data, 0, 4);
+}
