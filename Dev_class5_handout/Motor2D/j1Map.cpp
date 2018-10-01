@@ -4,7 +4,7 @@
 #include "j1Render.h"
 #include "j1Textures.h"
 #include "j1Map.h"
-//#include <math.h>
+#include <math.h>
 
 j1Map::j1Map() : j1Module(), map_loaded(false)
 {
@@ -302,10 +302,15 @@ bool j1Map::LoadTilesetImage(pugi::xml_node& tileset_node, TileSet* set)
 // TODO 3: Create the definition for a function that loads a single layer
 bool j1Map::LoadLayer(pugi::xml_node& node, MapLayer* layer)
 {
+	pugi::xml_node layer_node = node.child("layer");
+	bool ret = true;
+
+
+
 	layer->name.create(node.attribute("name").as_string());
 	layer->width = node.attribute("width").as_uint();
 	layer->height = node.attribute("height").as_uint();
 	layer->data = new uint[layer->width * layer->height];
 
-	memset(layer->data, 0, 4);
+	memset(layer->data, 0, sizeof(uint)*(layer->height * layer->width));
 }
