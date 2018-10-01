@@ -11,6 +11,11 @@
 
 struct MapLayer
 {
+
+	// TODO 6: Short function to get the value of x,y
+
+	inline uint Get(int x, int y) const;
+
 	p2SString name;
 	/*const char* name = nullptr;*/
 	uint* data = nullptr;
@@ -26,8 +31,6 @@ struct MapLayer
 
 	}
 };
-
-	// TODO 6: Short function to get the value of x,y
 
 
 
