@@ -8,15 +8,21 @@ int main()
 	MyString example("Hello");
 	MyString example2("Hell");
 
+	MyString copied(example);
 	/*printf("%s\n", example.text);*/
 	/*uint result = example.stringSize();*/
 
-	if (example == example2)
-	{
-		cout << "Asmongold" << endl;
-	}
-	else
-		cout << "McConnell" << endl;
+	
+
+	//if (example == example2)
+	//{
+	//	printf("Asmongold\n");
+	//}
+	//else
+	//	printf("McConnell\n");
+
+
+	cout << copied.GetString() << endl;
 
 	system("pause");
 	return 0;

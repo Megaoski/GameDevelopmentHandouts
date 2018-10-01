@@ -1,5 +1,5 @@
-#ifndef STRING_CLASS
-#define STRING_CLASS
+#ifndef _STRING_CLASS_
+#define _STRING_CLASS_
 
 typedef unsigned int uint;
 
@@ -9,31 +9,29 @@ public:
 
 	MyString() : text(nullptr), characters(0) {}
 
-	MyString(const char* word) : characters(strlen(word)), text(new char[characters + 1])//copy constructor
+	MyString(const char* word) : characters(strlen(word)), text(new char[characters + 1])
 	{
 		strcpy_s(text, characters + 1, word);
 	}
 	
-	/*MyString(const MyString &string) : characters(string), text(new char[characters + 1])
+	MyString(const MyString &string)
 	{
-
-	}*/
-
+		characters = string.characters;
+		text = new char[characters];
+		strcpy_s(text, characters + 1, string.text);//aqui peta 
+	}
+	
 	virtual ~MyString() 
 	{
 		delete[] text;
 	}
 
-	//metodo para comprar dos triungs y ver si son iguales
-	uint stringSize() const//metodo para saber numero de caracteres
-	{
-		return characters;
-	}
+
+	uint stringSize() const;
+	bool operator=(const MyString &string);
+	bool operator==(const MyString &string);
+	char* GetString();
 	
-	bool operator==(const MyString &string)
-	{
-		return strcmp(text, string.text) == 0;
-	}
 
 private:
 
@@ -41,6 +39,35 @@ private:
 	char* text = nullptr;
 
 };
+
+
+uint MyString::stringSize() const
+{
+	return characters;
+}
+
+bool MyString::operator=(const MyString &string) 
+{
+	/*for (int i = 0; i <= string.characters + 1; ++i)
+	{
+		for ()
+		{
+			if(string.text[i] == this.text[j])
+		}
+	}*/
+	return false;
+}
+
+bool MyString::operator==(const MyString &string)
+{
+	return strcmp(text, string.text) == 0;
+}
+
+char* MyString::GetString()
+{
+	return text;
+}
+
 
 
 #endif
