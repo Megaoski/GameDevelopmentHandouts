@@ -14,26 +14,18 @@ public:
 		strcpy_s(text, characters + 1, word);
 	}
 	
-	/*MyString(const MyString &string) : characters(string), text(new char[characters + 1])
-	{
-
-	}*/
-
+	
 	virtual ~MyString() 
 	{
 		delete[] text;
 	}
 
-	//metodo para comprar dos triungs y ver si son iguales
-	uint stringSize() const//metodo para saber numero de caracteres
-	{
-		return characters;
-	}
 	
-	bool operator==(const MyString &string)
-	{
-		return strcmp(text, string.text) == 0;
-	}
+	uint stringSize() const {};//metodo para saber numero de caracteres
+	
+	
+	bool operator==(const MyString &string) {};
+	
 
 private:
 
@@ -42,5 +34,18 @@ private:
 
 };
 
+
+uint MyString::
+
+////metodo para comprar dos strings y ver si son iguales
+//uint stringSize() const//metodo para saber numero de caracteres
+//{
+//	return characters;
+//}
+//
+//bool operator==(const MyString &string)
+//{
+//	return strcmp(text, string.text) == 0;
+//}
 
 #endif
