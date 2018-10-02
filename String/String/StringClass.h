@@ -14,7 +14,7 @@ public:
 
 	MyString(const char* word) : characters(strlen(word)), text(new char[characters + 1])
 	{
-		strcpy_s(text, characters + 1, word);
+		strcpy(text, word);
 	}
 	
 	//MyString(const MyString &string)
@@ -34,16 +34,18 @@ public:
 		}
 	}
 	
-	virtual ~MyString() { delete[] text;}
+	virtual ~MyString() 
+	{
+		clear();
+	}
 	
 	
-
-
 	uint stringSize() const;
-	bool operator=(const MyString &string);
+	void operator=(const MyString &string);
 	bool operator==(const MyString &string);
 	char* GetString();
 	MyString operator+(const MyString &string);
+	void clear();
 	
 
 private:
@@ -59,16 +61,12 @@ uint MyString::stringSize() const
 	return characters;
 }
 
-bool MyString::operator=(const MyString &string) 
+void MyString::operator=(const MyString &string) 
 {
-	/*for (int i = 0; i <= string.characters + 1; ++i)
-	{
-		for ()
-		{
-			if(string.text[i] == this.text[j])
-		}
-	}*/
-	return false;
+	clear();
+	characters = string.characters;
+	text = new char[characters + 1];
+	strcpy(text, string.text);
 }
 
 bool MyString::operator==(const MyString &string)
@@ -84,6 +82,16 @@ char* MyString::GetString()
 MyString MyString::operator+(const MyString &string)
 {
 	return strcat(text, string.text);
+}
+
+void MyString::clear()
+{
+	if (text != nullptr)
+	{
+		delete[] text;
+		text = nullptr;
+		characters = 0;
+	}
 }
 
 
