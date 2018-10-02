@@ -9,8 +9,9 @@ int main()
 	MyString example2("Hell");
 
 	MyString copied(example2);
+	MyString added = example + example2;
 	/*printf("%s\n", example.text);*/
-	/*uint result = example.stringSize();*/
+	uint result = added.stringSize();
 
 	
 
@@ -22,7 +23,7 @@ int main()
 	//	printf("McConnell\n");
 
 
-	cout << copied.GetString() << endl;
+	cout << result << endl;
 
 	system("pause");
 	return 0;

@@ -1,3 +1,6 @@
+#pragma warning(disable:4996)//to avoid strcat_s CRT WARNING problem
+
+
 #ifndef _STRING_CLASS_
 #define _STRING_CLASS_
 
@@ -40,6 +43,7 @@ public:
 	bool operator=(const MyString &string);
 	bool operator==(const MyString &string);
 	char* GetString();
+	MyString operator+(const MyString &string);
 	
 
 private:
@@ -77,6 +81,10 @@ char* MyString::GetString()
 	return text;
 }
 
+MyString MyString::operator+(const MyString &string)
+{
+	return strcat(text, string.text);
+}
 
 
 #endif
