@@ -9,6 +9,8 @@ int main()
 	MyString example2("Hell");
 
 	MyString copied(example);
+
+	MyString prove = example2;
 	/*printf("%s\n", example.text);*/
 	/*uint result = example.stringSize();*/
 
@@ -22,7 +24,7 @@ int main()
 	//	printf("McConnell\n");
 
 
-	cout << copied.GetString() << endl;
+	cout << prove.GetString() << endl;
 
 	system("pause");
 	return 0;
