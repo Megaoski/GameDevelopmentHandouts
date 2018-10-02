@@ -8,7 +8,7 @@ int main()
 	MyString example("Hello");
 	MyString example2("Hell");
 
-	MyString copied(example);
+	MyString copied(example2);
 	/*printf("%s\n", example.text);*/
 	/*uint result = example.stringSize();*/
 

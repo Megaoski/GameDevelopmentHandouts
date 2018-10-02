@@ -14,17 +14,26 @@ public:
 		strcpy_s(text, characters + 1, word);
 	}
 	
+	//MyString(const MyString &string)
+	//{
+	//	characters = string.characters;
+	//	text = new char[characters];
+	//	strcpy_s(text, characters + 1, string.text);
+	//}
 	MyString(const MyString &string)
 	{
-		characters = string.characters;
-		text = new char[characters];
-		strcpy_s(text, characters + 1, string.text);//aqui peta 
+		if (string.text != nullptr)
+		{
+			text = new char[string.characters + 1];
+			characters = string.characters + 1;
+			memset(text, 0, characters);
+			memcpy(text, string.text, characters);
+		}
 	}
 	
-	virtual ~MyString() 
-	{
-		delete[] text;
-	}
+	virtual ~MyString() { delete[] text;}
+	
+	
 
 
 	uint stringSize() const;
