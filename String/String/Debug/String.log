@@ -1,2 +1,4 @@
 ﻿  Main.cpp
-  String.vcxproj -> C:\Users\oscarll3\Documents\GitHub\GameDevelopmentHandouts\String\Debug\String.exe
+c:\users\usuario\documents\github\gamedevelopmenthandouts\string\string\stringclass.h(65): warning C4715: 'MyString::stringLenght': not all control paths return a value
+c:\users\usuario\documents\github\gamedevelopmenthandouts\string\string\stringclass.h(80): warning C4715: 'MyString::operator=': not all control paths return a value
+  String.vcxproj -> C:\Users\Usuario\Documents\GitHub\GameDevelopmentHandouts\String\Debug\String.exe

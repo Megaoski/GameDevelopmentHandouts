@@ -11,7 +11,7 @@ int main()
 	/*MyString copied(example2);*/
 	MyString added = example + example2;
 	/*printf("%s\n", example.text);*/
-	uint result = added.stringSize();
+	unsigned int result = added.stringLenght();
 
 
 
